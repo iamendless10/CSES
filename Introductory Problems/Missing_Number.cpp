@@ -157,15 +157,16 @@ void nextGreaterElements(vector<int>& nums) {
 
 
 void solve(long long n) {
-    cout << n; 
-    while (n != 1) {
-        if (n % 2 == 0) { 
-            n /= 2;
-        } else {
-            n = n * 3 + 1; 
-        }
-        cout << " " << n;
+    vector<int> arr(n - 1);
+    long long expectedsum = n * (n + 1)/2;
+    long long actualsum = 0 ;
+
+    for(int i = 0 ; i < n ; i++){
+        cin >> arr[i];
+        actualsum += arr[i];
     }
+
+    cout << expectedsum - actualsum << endl;
 }
 
 
